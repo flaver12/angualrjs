@@ -1,0 +1,9 @@
+<input type="text" name="input" ng-model="q1" ng-pattern="word" required ng-trim="false">
+<div data-ng-repeat="event in events | filter:q1 as result">
+    <a href="events/{{event.id}}">
+        <p data-ng-if="$index == 0">{{$index}} {{$first}} {{$last}}</p>
+        <p>{{event.id}}</p>
+        <p>{{event.title}}</p>
+    </a>
+</div>
+<div data-ng-include="'partial/eventsDetail.html'"></div>
